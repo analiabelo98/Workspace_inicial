@@ -39,8 +39,19 @@ var getJSONData = function(url){
         return result;
     });
 }
+if (
+  !window.location.href.endsWith('index.html') &&
+  !(sessionStorage.getItem('logged'))) {
+   localStorage.setItem("usuario", username.value);
+  
+}
 
-//Función que se ejecuta una vez que se haya lanzado el evento de
+//Guarda usuario en HTML
+var userGuardado = localStorage.getItem("user")
+document.getElementById("usuario").innerHTML = userGuardado;
+   
+
+//Función que se ejecuta una vez que haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
