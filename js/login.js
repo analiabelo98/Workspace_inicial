@@ -26,11 +26,17 @@ form.addEventListener("submit", function(event) {
 })
 
 //X redireccion y localStorage
-/*function submitEvent(evento) {
+function submitEvent(evento) {
     event.preventDefault();
     sessionStorage.setItem('logged', true);
     localStorage.setItem("user", inputUsers.value);
     window.location.href = 'index.html';
 
 }
-form.addEventListener('submit', submitEvent);*/
+form.addEventListener('submit', submitEvent);
+
+//Cerrar sesion
+function clearStorageSesion() {
+    localStorage.removeItem("user");
+    window.location.href = 'index.html';
+  }

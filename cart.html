@@ -36,29 +36,156 @@
 <body>
   <nav class="site-header sticky-top py-1 bg-dark">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
+      
       <a class="py-2 d-none d-md-inline-block" href="home.html">Inicio</a>
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+      
       <!-- Pefil dropdown-->
       <nav class="navbar-nav" id="navbar-nav">
-        <div class="usernav">
-          <li class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" id="usuario" data-toggle="dropdown"></a>
-          <div class="dropdown-menu" aria-labelledby="navDropDownLink">
-            <a class="dropdown-item" id="close" href="index.html">Cerrar Sesión</a>
-        </div>
-      </nav>
-    </div>
+      <div class="usernav">
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" id="usuario" data-toggle="dropdown"></a>
+        <div class="dropdown-menu" aria-labelledby="navDropDownLink">
+          <a class="dropdown-item" id="perfil" href="my-profile.html">Mi Perfil</a>
+          <a class="dropdown-item" id="carrito" href="cart.html">Mi carrito</a>
+          <a class="dropdown-item" id="close" onClick="clearStorageSesion()">Cerrar Sesión</a>
+      </div>
+    </nav>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 11/10/2020) y Entrega 6 (Fecha de entrega: 25/10/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <main role="main" class="pb-5"></main>
+  <div class="container" id="ProductCart">
+    
+  <div id="cantCart"></div>
+  </div>
+  <div>
+   <!--Modal para Seleccionar-->
+   <div id="modalSeleccionar" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg" role="content" >
+        <!-- Modal content-->
+        <div class="modal-content col-8" >
+            <div class="modal-header text-center d-block">
+                <h4 class="modal-title d-inline-block">Forma de pago</h4> <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-row col-12">
+                        
+                            <div class="col-12">
+                                <input type="radio" class="col-1" name="inlineRadioOptions" onclick="tarjeta()" id="inlineRadio1" value="option1"> Tarjeta de crédito
+                                <hr>
+                              </div>
+                          
+                            <div class="col-6 mt-4">
+                            <label for="" class="">Número de tarjeta</label>
+                            <input type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" >
+                          </div>
+                          <div class="col-6 mt-4">
+                            <label for="" class="">Código de seguridad</label>
+                            <input type="password" class="col-6" size="20px">
+                          </div>
+                          <div class="col-6 mt-4">
+                            <label for="" class="">Vencimiento(MM/AA)</label>
+                            <input type="month" min="2020-11" value="2020-11">
+                          </div>
+                          
+                            <div class="col-12 mt-2">
+                              <input type="radio" class="col-1 mt-4" name="inlineRadioOptions" onclick="Banco()" id="inlineRadio1" value="option1"> Transferencia bancaria
+                          <hr>
+                            </div>
+                        <hr>    
+                          <div class="col-6 mt-2">
+                            <label for="" class="">Número de cuenta</label>
+                            <input type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" >
+                         
+                          </div>
+                          
+                          
+  
+                            <div class="d-flex justify-content-center col-12 mt-4">
+                              <hr>
+                                <button type="submit" class="btn btn-primary btn-md">Aceptar</button>        
+                            </div>
+                        </div>
+                </form>
+            </div>
+        </div>
     </div>
+</div>
+</div>
+<!--FIN MODAL-->
+<div class="container col-4">
+  
+  <hr class="mb-4">
+  <h5 class="mb-3">Tipo de envío</h5>
+  <div class="d-block my-3">
+    <div class="custom-control custom-radio">
+      <input id="premiumradio" name="envioType" type="radio" class="custom-control-input" checked="" required="">
+      <label class="custom-control-label" for="premiumradio">Premium 2 a 5 días (15%)</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input id="expressradio" name="envioType" type="radio" class="custom-control-input" required="">
+      <label class="custom-control-label" for="expressradio">Express 5 a 8 días (7%)</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input id="standardradio" name="envioType" type="radio" class="custom-control-input" required="">
+      <label class="custom-control-label" for="standardradio">Standar 12 a 15 días (5%)</label>
+    </div>
+  </div>
+  <hr>
+  
+  <h5 class="mb-3">Dirección de envío</h5>
+  <form class="" id="buyInfo">
+    <div class="col-6 mt-4">
+      
+      
+    </div>
+    <div class="row">
+      <div class="">
+        <label for="productName">Calle</label>
+        <input type="text" class="form-control" id="calle" placeholder="" value="" >
+        <div class="invalid-feedback">
+          Este campo debe estar completo.
+        </div>
+      </div>
+    </div>
+      <div class="row">
+        <div class="">
+          <label for="productName">Número</label>
+          <input type="text" class="form-control" id="numero" placeholder="" value="" >
+          <div class="invalid-feedback">
+            Este campo debe estar completo.
+          </div>
+        </div>
+      </div>
+      
+      
+   
+      <div class="row">
+        <div class="">
+          <label for="productName">Esquina</label>
+          <input type="text" class="form-control" id="esquina" placeholder="" value="" >
+          <div class="invalid-feedback">
+            Este campo debe estar completo.
+          </div>
+        </div>
+      </div>
+             
+              <hr>
+              <h4>Forma de pago</h4><p id="formaDePago">Aún no se selecciona un método</p>
+              <a id="Seleccionar" href="" data-toggle="modal">Seleccionar</a>
+              <hr>
+       <div class="col">
+              <button type="submit" class="btn btn-primary btn-sm ml-1">Finalizar compra</button>
+        </div>
+  </form>
+ 
+  <div class="alert fade" role="alert" id="alertResult">
+      <span id="resultSpan"></span>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+      </button>
   </div>
   <div id="spinner-wrapper">
     <div class="lds-ring">
@@ -68,6 +195,14 @@
       <div></div>
     </div>
   </div>
+</div>
+</main>
+<footer class="text-muted">
+  <div class="container">
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+  </div>
+</footer>
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/dropzone.js"></script>

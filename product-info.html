@@ -18,22 +18,120 @@
 <body>
   <nav class="site-header sticky-top py-1 bg-dark">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
+      
+      <a class="py-2 d-none d-md-inline-block" href="home.html">Inicio</a>
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+      
+      <!-- Pefil dropdown-->
+      <nav class="navbar-nav" id="navbar-nav">
+      <div class="usernav">
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" id="usuario" data-toggle="dropdown"></a>
+        <div class="dropdown-menu" aria-labelledby="navDropDownLink">
+          <a class="dropdown-item" id="perfil" href="my-profile.html">Mi Perfil</a>
+          <a class="dropdown-item" id="carrito" href="cart.html">Mi carrito</a>
+          <a class="dropdown-item" id="close" onClick="clearStorageSesion()">Cerrar Sesión</a>
+      </div>
+    </nav>
+  </nav>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 13/09/2020) y Entrega 4 (Fecha de entrega: 20/09/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
+  <main role="main">
+  <div class="container  ">
+    <div class="text-center p-4">
+      <h2>Descripción del producto</h2>
+      <p class="lead">Encontrarás aquí toda la información sobre el producto seleccionado.</p>
+      <p class="small alert-warning py-3"><strong>Nota: </strong>por simplicidad, cualquiera sea el producto
+      seleccionado previamente, siempre se visualizará el presente: <strong>Chevrolet Onix Joy</strong>.</p>
+
+   <!--Muestro info de producto-->
+   <h3 class="text-center MT-4" id="productName"></h3>
+   <hr>
+      <div class="row col-12">
+      
+          <div class="col-4 mt-4">
+              <dl>
+              <dt class="mb-4">Descripción</dt>
+              <dd>
+                <p align="left" id="productDescription"></p>
+              </dd>
+              <div class="col-2">
+                <dt>Precio</dt>
+                <dd>
+                  <p id="productCost"></p>
+                </dd>
+  
+                <dt>Categoría</dt>
+                <dd>
+                  <a href="category-info.html" id="productCategory"></a>
+                </dd>
+              </div>
+          </div>
+            <div class="col-8 mt-4 ">
+                <dt class="text-center text-right mb-4">Imágenes ilustrativas</dt>
+                <div id="productImagesGallery"class="carousel slide" data-ride="carousel">
+                </div>
+            </div>
+         </div>
+        
+   </div>
+   
+   
+      <h2 class="text-center mb-3 mt-4">Comentarios</h2>
+      <!--Comentarios-->
+      <div id="comentarios"></div>
+      <div id="nuevosComentarios"></div>
+          <hr>
+          <h4 class="text-center card-header" id="dtext">Agregar un comentario</h4>
+          <div class="row " style="width: auto; margin: auto auto;">
+          <div class="col-12">
+          <div class="form-group row justify-content-center">
+                <label for="inputState" class="mt-4">Puntuación </label>
+                <div class="stars formComment">
+                  <form action="" id="scorebox" class="form-group">
+                    <input class="star star-5" id="star-5" type="radio"  name="star"/>
+                    <label class="star star-5" for="star-5"></label>
+                    <input class="star star-4" id="star-4" type="radio" name="star"/>
+                    <label class="star star-4" for="star-4"></label>
+                    <input class="star star-3" id="star-3" type="radio" name="star"/>
+                    <label class="star star-3" for="star-3"></label>
+                    <input class="star star-2" id="star-2" type="radio" name="star"/>
+                    <label class="star star-2" for="star-2"></label>
+                    <input class="star star-1" id="star-1" type="radio" name="star"/>
+                    <label class="star star-1" for="star-1"></label>
+                  </form>
+                </div>
+             
+           </div>
+           
+   
+           <div class="form-group row justify-content-center">
+            <label for="exampleFormControlTextarea1" class="mr-5 " >Comentario</label>
+            <textarea class="form-control col-10 form-group" id="txt1" rows="4" cols="4"></textarea>
+          </div>
+
+           <div class="form-group row justify-content-center">
+             <div>
+               
+              <button class="btn" style="background-color:rgb(212, 19, 154); color: white;" onClick="clearComment()">Enviar </button>
+             </div>
+           </div>
+         </form>
+        </div>
+     </div>
+     <!--Productos relacionados-->
+     <hr>
+     <dt class="text-center col-8 mb-4">Productos relacionados</dt>
+         
+     <div class="row co-12" style="width: 800px; height: 400px;" id="ProductsRelated"></div>
+   
+    
   </div>
-  <footer class="text-muted">
+
+</main>
+  <footer class="text-muted mt-8">
     <div class="container">
       <p class="float-right">
         <a href="#">Volver arriba</a>
