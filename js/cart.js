@@ -1,7 +1,7 @@
 let comissionPercentage = 0.15;
 var currentCartArray = [];
 let productCost = 0;
-let SUCCESS_MSG = "¡Se ha realizado la publicación con éxito! :)";
+let SUCCESS_MSG = "¡Se ha realizado la compra con éxito! :)";
 let ERROR_MSG = "Ha habido un error :(, verifica qué pasó.";
 
 function showCartProducts(currentCartArray){
@@ -84,8 +84,7 @@ function showCartProducts(currentCartArray){
                 </li>
               </ul>
               </div>
-        
-               
+       
         `
         document.getElementById("ProductCart").innerHTML = htmlContentToAppend;
         console.log(comissionPercentage)
@@ -170,11 +169,11 @@ document.addEventListener("DOMContentLoaded", function(e){
   });
    
 });
-//Se obtiene el formulario de publicación de producto
+//Verificación
 var buyForm = document.getElementById("buyInfo");
 
 //Se agrega una escucha en el evento 'submit' que será
-//lanzado por el formulario cuando se seleccione 'Vender'.
+//lanzado por el formulario cuando se seleccione 'Finalizar compra'.
 buyForm.addEventListener("submit", function(e){
 
     let calleInput = document.getElementById("calle");
@@ -187,23 +186,23 @@ buyForm.addEventListener("submit", function(e){
     numeroInput.classList.remove('is-invalid');
     esquinaInput.classList.remove('is-invalid');
 
-    //Se realizan los controles necesarios,
-    //En este caso se controla que se haya ingresado el nombre y categoría.
-    //Consulto por el nombre del producto
+    
+    //Se controla que los campos esten completos.
+    
     if (calleInput.value === "")
     {
         calleInput.classList.add('is-invalid');
         infoMissing = true;
     }
     
-    //Consulto por la categoría del producto
+    
     if (numeroInput.value === "")
     {
         numeroInput.classList.add('is-invalid');
         infoMissing = true;
     }
 
-    //Consulto por el costo
+  
     if (esquinaInput.value == "")
     {
         esquinaInput.classList.add('is-invalid');

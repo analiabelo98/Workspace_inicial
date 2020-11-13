@@ -34,46 +34,112 @@
 </head>
 
 <body>
-  <nav class="site-header sticky-top py-1 bg-dark">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-      
-      <a class="py-2 d-none d-md-inline-block" href="home.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      
-      <!-- Pefil dropdown-->
-      <nav class="navbar-nav" id="navbar-nav">
-      <div class="usernav">
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse navbar-dark site-header sticky-top py-1" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto container d-flex flex-column flex-md-row justify-content-between">
+        <li class="nav-item">
+          <a class="" href="home.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="  " href="categories.html">Categorías</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class=" " href="products.html">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class=" " href="sell.html">Vender</a>
+        </li>
+          
         <li class="nav-item dropdown">
-          <a href="#" class="nav-link dropdown-toggle" id="usuario" data-toggle="dropdown"></a>
-        <div class="dropdown-menu" aria-labelledby="navDropDownLink">
-          <a class="dropdown-item" id="perfil" href="my-profile.html">Mi Perfil</a>
-          <a class="dropdown-item" id="carrito" href="cart.html">Mi carrito</a>
-          <a class="dropdown-item" id="close" onClick="clearStorageSesion()">Cerrar Sesión</a>
-      </div>
-    </nav>
+          
+         <a href="#" class=" dropdown-toggle" id="usuario" data-toggle="dropdown"></a>
+          
+          <div class="dropdown-menu" aria-labelledby="navDropDownLink">
+            <a class="dropdown-item" id="perfil" href="my-profile.html">Mi Perfil</a>
+            <a class="dropdown-item" id="carrito" href="cart.html">Mi carrito</a>
+            <a class="dropdown-item" id="close" onClick="clearStorageSesion()">Cerrar Sesión</a>
+        </div>
+        </li>
+      </ul>
+    </div>
   </nav>
   <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 7 (Fecha de entrega: 8/11/202020) -> Punto 1 y 2.</p>
+   
+  <div class="row p-5 mt-4">
+    <!--Modal para Seleccionar-->
+  <div id="modalCambiarDatos" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg" role="content" >
+        <!-- Modal content-->
+        <div class="modal-content col-8" >
+            
+            <div class="modal-body">
+                
+              <div class="">
+                <form action="" class="" id="infoPerfil">
+                  <div class="mt-4 ">
+                    <label class="col-12" >Primer nombre:  *</label>
+                   
+                    <input class="col-12" type="text" id="Nombre1" required> 
+                  </div>
+                 <div class="mt-4">
+                    <label class="col-12"> Segundo nombre:</label>
+                    
+                   <input class="col-12" type="text" id="Nombre2">
+                 </div>
+                 <div class="mt-4">
+                   <label class="col-12"> Primer apellido:  *</label>
+                   
+                   <input class="col-12" type="text" id="Apellido1" required>
+                 </div>
+                 <div class="mt-4">
+                   <label class="col-12"> Segundo apellido:</label>
+                   
+                   <input class="col-12" type="text" id="Apellido2">
+                 </div>
+                 <div class="mt-4 ">
+                   <label class="col-12"> Email:  *</label>
+                   
+                   <input class="col-12" type="text" id="Email" required>
+                 </div>
+                 <div class="mt-4">
+                   <label class="col-12"> Teléfono de contacto: *</label>
+                   
+                   <input class="col-12" type="text" id="InfoTel" placeholder="" required>
+                 </div>
+                 <hr>
+                 <button type="submit" class="btn btn-primary" id="GuardarCambios" data-dismiss = "modal">Guardar cambios</button>
+             
+                </form>
+               </div>      
+            </div> 
+         </div>
+    </div>
+  </div>
+    <h2 class="col-12">Mi perfil:</h2>
+     <hr>
+   <div><img src="" alt=""></div>
+   <div class="row col-12 text-center ">
+     
+     <p class="p-4 col-6">Nombre:</p><p id="pNombre1" class="p-4 col"></p>
+     <p class="p-4 col-6">Segundo nombre:</p><p id="pNombre2" class="p-4 col-6"></p>
+     <p class="p-4 col-6">Apellido:</p><p id="pApellido" class="p-4 col-6"></p>
+     <p class="p-4 col-6">Segundo Apellido:</p><p id="pApellido2" class="p-4 col-6"></p>
+     <p class="p-4 col-6">Email:</p><p id="pEmail" class="p-4 col-6"></p>
+     <p class="p-4 col-6">Teléfono:</p><p id="pTel" class="p-4 col-6"></p>
+    
+     <div class="d-flex justify-content-center col-7 mt-4">
       <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+      <button type="submit" class="btn btn-primary " id="CambiarDatos" data-toggle="modal" >Agregar Datos</button>
     </div>
+    
+   </div>
   </div>
-  <footer class="text-muted bg-light">
-    <div class="container">
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-    </div>
-  </footer>
-  <div class="alert fade alert-success" role="alert" id="alertResult">
-    <span id="resultSpan"></span>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
+</div>
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
