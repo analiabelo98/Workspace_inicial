@@ -10,6 +10,7 @@ function showCartProducts(currentCartArray){
     let htmlContentToAppend = "";
     let htmlContentToAppendII = "";
     let total =0;
+    
     for (let i=0; i < currentCartArray.length; i++){
         
         let cartProduct = currentCartArray[i];
@@ -58,8 +59,7 @@ function showCartProducts(currentCartArray){
         <tbody  >`+ htmlContentToAppendII+` </tbody>
         </table>   
                 <hr>
-                
-              </form>
+              
               <div class="container mt-4 mb-3">
               <h4>Costos</h4>
               <div id="costosId"></div>
@@ -126,7 +126,7 @@ function cantCart(){
 function tarjeta(){
   document.getElementById("formaDePago").innerHTML = "Tarjeta de crédito";
   }
-  function Banco(){
+function Banco(){
     document.getElementById("formaDePago").innerHTML = "Transferencia bancaria";
   }
 

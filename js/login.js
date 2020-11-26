@@ -20,9 +20,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             
             location.href = 'home.html';
             
-            //Guarda usuario en HTML
-            
-            document.getElementById("usuario").innerHTML = sessionStorage.getItem("user");
+           
         });
 
       
