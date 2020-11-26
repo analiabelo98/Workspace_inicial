@@ -36,31 +36,31 @@ function showCartProducts(currentCartArray){
                 </tr>
                 `
     }  //Tabla con productos y tabla con costos
-        htmlContentToAppend += `<table class="col-12">
-        <thead  >
-        
-          <tr style="border-bottom: 1px solid #000; class="mb-4 mt-4">
-          <th ></th>
-          <th ></th>
-            <th scope="col">Nombre</th>
-            <th ></th>
-            <th scope="col">Costo</th>
-            <th ></th>
-            
-            <th scope="col">Cantidad</th>
-            <th ></th>
-            <th scope="col">Subtotal</th>
-          </tr>
-        </thead>
+        htmlContentToAppend += `
+            <div class="col-md-12  mt-4 mb-3">
+                  <table class=" col-md-12 col-sm-12 mt-4">
+                  <thead  >
+                  
+                    <tr style="border-bottom: 1px solid #000; class="mb-4 mt-4">
+                    <th ></th>
+                    <th ></th>
+                      <th scope="col">Nombre</th>
+                      <th ></th>
+                      <th scope="col">Costo</th>
+                      <th ></th>
+                      
+                      <th scope="col">Cantidad</th>
+                      <th ></th>
+                      <th scope="col">Subtotal</th>
+                    </tr>
+                  </thead>
         
         <tbody  >`+ htmlContentToAppendII+` </tbody>
         </table>   
-        
-       
                 <hr>
                 
               </form>
-              <div class="container col-6">
+              <div class="container mt-4 mb-3">
               <h4>Costos</h4>
               <div id="costosId"></div>
               <ul class="list-group mb-3">
@@ -84,6 +84,7 @@ function showCartProducts(currentCartArray){
                 </li>
               </ul>
               </div>
+          </div>
        
         `
         document.getElementById("ProductCart").innerHTML = htmlContentToAppend;
@@ -179,12 +180,21 @@ buyForm.addEventListener("submit", function(e){
     let calleInput = document.getElementById("calle");
     let numeroInput = document.getElementById("numero");
     let esquinaInput = document.getElementById("esquina");
+    let tarjetaInput = document.getElementById("numTarj");
+    let tarjetaPInput = document.getElementById("passTarj");
+    let tarjetaVInput = document.getElementById("VenTarj");
+    let bancoInput = document.getElementById("numBanco");
+    
     let infoMissing = false;
 
     //Quito las clases que marcan como inválidos
     calleInput.classList.remove('is-invalid');
     numeroInput.classList.remove('is-invalid');
     esquinaInput.classList.remove('is-invalid');
+    tarjetaInput.classList.remove('is-invalid');
+    tarjetaPInput.classList.remove('is-invalid');
+    tarjetaVInput.classList.remove('is-invalid');
+    bancoInput.classList.remove('is-invalid');
 
     
     //Se controla que los campos esten completos.
@@ -206,6 +216,31 @@ buyForm.addEventListener("submit", function(e){
     if (esquinaInput.value == "")
     {
         esquinaInput.classList.add('is-invalid');
+        infoMissing = true;
+    }
+
+    if (tarjetaInput.value === "")
+    {
+        tarjetaInput.classList.add('is-invalid');
+        infoMissing = true;
+    }
+
+    if (tarjetaPInput.value === "")
+    {
+        tarjetaPInput.classList.add('is-invalid');
+        infoMissing = true;
+        alert("rellenar forma de pago");
+    }
+
+    if (tarjetaVInput.value === "")
+    {
+        tarjetaVInput.classList.add('is-invalid');
+        infoMissing = true;
+    }
+
+    if (bancoInput.value === "")
+    {
+        bancoInput.classList.add('is-invalid');
         infoMissing = true;
     }
     

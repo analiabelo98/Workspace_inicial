@@ -15,6 +15,7 @@
     <link href="css/styles.css" rel="stylesheet">
   </head>
   <body>
+    <!--NAV-->
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -49,6 +50,8 @@
         </ul>
       </div>
     </nav>
+
+
     <main role="main" class="pb-5">
         <div class="text-center p-4">
             <h2>Categorías</h2>
@@ -58,18 +61,19 @@
             <div class="row">
                 <div class="col-sm-6 col-md-12 text-right">
                     <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
-                        <label class="btn btn-light active" id="sortAsc" >
+                        <label class="btn btn-light active"  style="background-color: rgb(223, 221, 221);  border-color: rgb(206, 204, 204);" id="sortAsc" >
                             <input type="radio" name="options" autocomplete="off" checked>A-Z
                         </label>
-                        <label class="btn btn-light" id="sortDesc" >
+                        <label class="btn btn-light" style="background-color: rgb(223, 221, 221);  border-color: rgb(206, 204, 204);" id="sortDesc" >
                             <input type="radio" name="options" autocomplete="off">Z-A
                         </label>
-                        <label class="btn btn-light" id="sortByCount" >
+                        <label class="btn btn-light" style="background-color: rgb(223, 221, 221);  border-color: rgb(206, 204, 204);" id="sortByCount" >
                             <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Cant.
                         </label>
                     </div>
                 </div>
             </div>
+            <!--Botones filtro-->
             <div class="row justify-content-end">
               <div class="col-md-6"></div>
                 <div class="col-md-6 col-sm-12 mb-1 container">
@@ -86,21 +90,22 @@
                     <div class="col-md-4 col-sm-12 p-0">
                     
                       <div class="btn-group col-sm-6" role="group">
-                        <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button>
-                        <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
+                        <button class="btn btn-light btn-block" style="background-color: rgb(223, 221, 221);  border-color: rgb(206, 204, 204);"  id="rangeFilterCount">Filtrar</button>
+                        <button class="btn btn-link btn-sm" style="background-color: rgb(223, 221, 221);  border-color: rgb(206, 204, 204);" id="clearRangeFilter">Limpiar</button>
                       </div>
                     </div>
                   </div>
                 </div>
             </div>
+            <!--Productos-->
             <div class="row">
                 <div class="list-group" id="cat-list-container">
                 </div>
             </div>
-
-            
         </div>
     </main>
+
+
     <footer class="text-muted bg-light">
       <div class="container">
         <p class="float-right">
@@ -114,6 +119,7 @@
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>
+    <script src="js/login.js"></script>
     <script src="js/categories.js"></script>
   </body>
 </html>

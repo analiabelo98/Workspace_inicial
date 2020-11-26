@@ -3,123 +3,213 @@
 <html lang="en">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+          <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <title>eMercado - Todo lo que busques está aquí</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+          <meta name="description" content="">
+          <title>eMercado - Todo lo que busques está aquí</title>
 
-  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
-  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+          <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+          <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
 
-  <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
+          <style>
+                    .bd-placeholder-img {
+                      font-size: 1.125rem;
+                      text-anchor: middle;
+                      -webkit-user-select: none;
+                      -moz-user-select: none;
+                      -ms-user-select: none;
+                      user-select: none;
+                    }
 
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
-    }
-  </style>
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
-  <link href="css/dropzone.css" rel="stylesheet">
+                    @media (min-width: 768px) {
+                      .bd-placeholder-img-lg {
+                        font-size: 3.5rem;
+                      }
+                    }
+          </style>
+          <link href="css/bootstrap.min.css" rel="stylesheet">
+          <link href="css/styles.css" rel="stylesheet">
+          <link href="css/dropzone.css" rel="stylesheet">
 </head>
 
 <body>
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
   
     <div class="collapse navbar-collapse navbar-dark site-header sticky-top py-1" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto container d-flex flex-column flex-md-row justify-content-between">
-        <li class="nav-item">
-          <a class="" href="home.html">Inicio</a>
-        </li>
-        <li class="nav-item">
-          <a class="  " href="categories.html">Categorías</a>
-        </li>
-        
-        <li class="nav-item">
-          <a class=" " href="products.html">Productos</a>
-        </li>
-        <li class="nav-item">
-          <a class=" " href="sell.html">Vender</a>
-        </li>
-          
-        <li class="nav-item dropdown">
-          
-         <a href="#" class=" dropdown-toggle" id="usuario" data-toggle="dropdown"></a>
-          
-          <div class="dropdown-menu" aria-labelledby="navDropDownLink">
-            <a class="dropdown-item" id="perfil" href="my-profile.html">Mi Perfil</a>
-            <a class="dropdown-item" id="carrito" href="cart.html">Mi carrito</a>
-            <a class="dropdown-item" id="close" onClick="clearStorageSesion()">Cerrar Sesión</a>
-        </div>
-        </li>
-      </ul>
+            <ul class="navbar-nav mr-auto container d-flex flex-column flex-md-row justify-content-between">
+                <li class="nav-item">
+                  <a class="" href="home.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="  " href="categories.html">Categorías</a>
+                </li>
+                
+                <li class="nav-item">
+                  <a class=" " href="products.html">Productos</a>
+                </li>
+                <li class="nav-item">
+                  <a class=" " href="sell.html">Vender</a>
+                </li>
+                  
+                <li class="nav-item dropdown">
+                
+                <a href="#" class=" dropdown-toggle" id="usuario" data-toggle="dropdown"></a>
+                  
+                        <div class="dropdown-menu" aria-labelledby="navDropDownLink">
+                          <a class="dropdown-item" id="perfil" href="my-profile.html">Mi Perfil</a>
+                          <a class="dropdown-item" id="carrito" href="cart.html">Mi carrito</a>
+                          <a class="dropdown-item" id="close" onClick="clearStorageSesion()">Cerrar Sesión</a>
+                      </div>
+                </li>
+            </ul>
     </div>
   </nav>
-  <main role="main" class="pb-5"></main>
-  <div class="container" id="ProductCart">
-    
-  <div id="cantCart"></div>
+  <main role="main" class="pb-5">
+  
+                <h2 class="text-center p-3">Mi carrito</h2>
+                <hr>
+  <div class="row col-md-12 col-sm-12 "> 
+                    <!--html content to append-->
+                <div class=" col-sm-12 col-md-9" id="ProductCart"></div>
+          
+                <div id="cantCart"></div>
+        <div class="col ">
+          <div class="col-md-12 col-sm-12 mt-4 mb-3 p-3">
+          
+                      <h5 class="mb-3 ">Tipo de envío</h5>
+                      <div class="d-block my-3">
+                        <div class="custom-control custom-radio">
+                          <input id="premiumradio" name="envioType" type="radio" class="custom-control-input" checked="" required="">
+                          <label class="custom-control-label" for="premiumradio">Premium 2 a 5 días (15%)</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                          <input id="expressradio" name="envioType" type="radio" class="custom-control-input" required="">
+                          <label class="custom-control-label" for="expressradio">Express 5 a 8 días (7%)</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                          <input id="standardradio" name="envioType" type="radio" class="custom-control-input" required="">
+                          <label class="custom-control-label" for="standardradio">Standar 12 a 15 días (5%)</label>
+                        </div>
+                      </div>
+                      
+          
+                    <h5 class="mb-3 ">Dirección de envío</h5>
+                    <form class="" id="buyInfo">
+                      <div class="row col-12">
+                        <div class="">
+                          <label for="productName">Calle</label>
+                          <input type="text" class="form-control" id="calle" placeholder="" value="" >
+                          <div class="invalid-feedback">
+                            Este campo debe estar completo.
+                          </div>
+                        </div>
+                      </div>
+                        <div class="row col-12">
+                          <div class="">
+                            <label for="productName">Número</label>
+                            <input type="text" class="form-control" id="numero" placeholder="" value="" >
+                            <div class="invalid-feedback">
+                              Este campo debe estar completo.
+                            </div>
+                          </div>
+                        </div>
+                    
+                        <div class="row col-12">
+                          <div class="">
+                            <label for="productName">Esquina</label>
+                            <input type="text" class="form-control" id="esquina" placeholder="" value="" >
+                            <div class="invalid-feedback">
+                              Este campo debe estar completo.
+                            </div>
+                          </div>
+                        </div>
+          
+                        
+                        <h4>Forma de pago</h4><p id="formaDePago">Aún no se selecciona un método</p>
+                        <a id="Seleccionar" href="" data-toggle="modal">Seleccionar</a><div class="invalid-feedback">
+                          Este campo debe estar completo.
+                        </div>
+                        
+                       
+          
+                  <div class="alert fade" role="alert" id="alertResult">
+                      <span id="resultSpan"></span>
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+          </div>
+          <div class="col">
+            <button type="submit" class="btn btn-primary btn-lg mb-3 mt-4">Finalizar compra</button>
+      </div>
+          
+</form>
+        </div>
   </div>
-  <div>
+  
+  
    <!--Modal para Seleccionar-->
    <div id="modalSeleccionar" class="modal fade" role="dialog">
     <div class="modal-dialog modal-lg" role="content" >
         <!-- Modal content-->
-        <div class="modal-content col-8" >
+        <div class="modal-content col-md-8 col-sm-12" >
             <div class="modal-header text-center d-block">
                 <h4 class="modal-title d-inline-block">Forma de pago</h4> <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
                 <form>
-                    <div class="form-row col-12">
+                    <div class="form-row col-md-12 col-sm-12">
                         
-                            <div class="col-12">
-                                <input type="radio" class="col-1" name="inlineRadioOptions" onclick="tarjeta()" id="inlineRadio1" value="option1"> Tarjeta de crédito
+                          <div class="col-md-12 col-sm-12">
+                                <input  type="radio"  class="col-1" name="inlineRadioOptions" onclick="tarjeta()" id="tarjetaRadio" value="option1"> Tarjeta de crédito
                                 <hr>
-                              </div>
+                          </div>
                           
-                            <div class="col-6 mt-4">
+                          <div class="col-md-6 col-sm-6 mt-4">
                             <label for="" class="">Número de tarjeta</label>
-                            <input type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" >
+                            <input class="form-control" type="tel" inputmode="numeric" id="numTarj"  maxlength="19" >
+                            <div class="invalid-feedback">
+                              Este campo debe estar completo.
+                            </div>
                           </div>
-                          <div class="col-6 mt-4">
+                          <div class="col-md-6 col-sm-6 mt-4">
                             <label for="" class="">Código de seguridad</label>
-                            <input type="password" class="col-6" size="20px">
+                            <input class="form-control" type="password" id="passTarj" class="col-6" size="20px">
+                            <div class="invalid-feedback">
+                              Este campo debe estar completo.
+                            </div>
                           </div>
-                          <div class="col-6 mt-4">
+                          <div class="col-md-6 col-sm-6 mt-4">
                             <label for="" class="">Vencimiento(MM/AA)</label>
-                            <input type="month" min="2020-11" value="2020-11">
+                            <input class="form-control" type="month" id="VenTarj" min="2020-11" value="2020-11">
+                            <div class="invalid-feedback">
+                              Este campo debe estar completo.
+                            </div>
                           </div>
                           
-                            <div class="col-12 mt-2">
-                              <input type="radio" class="col-1 mt-4" name="inlineRadioOptions" onclick="Banco()" id="inlineRadio1" value="option1"> Transferencia bancaria
+                            <div class="col-md-12 col-sm-12 mt-2">
+                              <input type="radio" class="col-1 mt-4"  name="inlineRadioOptions" onclick="Banco()" id="BancoRadio" value="option1"> Transferencia bancaria
                           <hr>
                             </div>
                         <hr>    
-                          <div class="col-6 mt-2">
+                          <div class="col-md-6 col-sm-6 mt-2">
                             <label for="" class="">Número de cuenta</label>
-                            <input type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" >
+                            <input class="form-control" type="tel" id="numBanco" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" >
+                            <div class="invalid-feedback">
+                              Este campo debe estar completo.
+                            </div>
                          
                           </div>
                           
                           
   
-                            <div class="d-flex justify-content-center col-12 mt-4">
+                            <div class="d-flex justify-content-center col-md-12 col-sm-12 mt-4">
                               <hr>
-                                <button type="submit" class="btn btn-primary btn-md">Aceptar</button>        
+                                <button type="button" class=" btn btn-primary btn-md" data-dismiss="modal">Aceptar</button>      
                             </div>
                         </div>
                 </form>
@@ -127,101 +217,33 @@
         </div>
     </div>
 </div>
-</div>
+
 <!--FIN MODAL-->
-<div class="container col-4">
+
+      <div id="spinner-wrapper">
+        <div class="lds-ring">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
   
-  <hr class="mb-4">
-  <h5 class="mb-3">Tipo de envío</h5>
-  <div class="d-block my-3">
-    <div class="custom-control custom-radio">
-      <input id="premiumradio" name="envioType" type="radio" class="custom-control-input" checked="" required="">
-      <label class="custom-control-label" for="premiumradio">Premium 2 a 5 días (15%)</label>
-    </div>
-    <div class="custom-control custom-radio">
-      <input id="expressradio" name="envioType" type="radio" class="custom-control-input" required="">
-      <label class="custom-control-label" for="expressradio">Express 5 a 8 días (7%)</label>
-    </div>
-    <div class="custom-control custom-radio">
-      <input id="standardradio" name="envioType" type="radio" class="custom-control-input" required="">
-      <label class="custom-control-label" for="standardradio">Standar 12 a 15 días (5%)</label>
-    </div>
-  </div>
-  <hr>
-  
-  <h5 class="mb-3">Dirección de envío</h5>
-  <form class="" id="buyInfo">
-    <div class="col-6 mt-4">
-      
-      
-    </div>
-    <div class="row">
-      <div class="">
-        <label for="productName">Calle</label>
-        <input type="text" class="form-control" id="calle" placeholder="" value="" >
-        <div class="invalid-feedback">
-          Este campo debe estar completo.
-        </div>
-      </div>
-    </div>
-      <div class="row">
-        <div class="">
-          <label for="productName">Número</label>
-          <input type="text" class="form-control" id="numero" placeholder="" value="" >
-          <div class="invalid-feedback">
-            Este campo debe estar completo.
+
+
+  </main>
+  <footer class="text-muted">
+          <div class="container">
+              <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+              <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
           </div>
-        </div>
-      </div>
-      
-      
-   
-      <div class="row">
-        <div class="">
-          <label for="productName">Esquina</label>
-          <input type="text" class="form-control" id="esquina" placeholder="" value="" >
-          <div class="invalid-feedback">
-            Este campo debe estar completo.
-          </div>
-        </div>
-      </div>
-             
-              <hr>
-              <h4>Forma de pago</h4><p id="formaDePago">Aún no se selecciona un método</p>
-              <a id="Seleccionar" href="" data-toggle="modal">Seleccionar</a>
-              <hr>
-       <div class="col">
-              <button type="submit" class="btn btn-primary btn-sm ml-1">Finalizar compra</button>
-        </div>
-  </form>
- 
-  <div class="alert fade" role="alert" id="alertResult">
-      <span id="resultSpan"></span>
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-      </button>
-  </div>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
-</div>
-</main>
-<footer class="text-muted">
-  <div class="container">
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-  </div>
-</footer>
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/dropzone.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/cart.js"></script>
+  </footer>
+          <script src="js/jquery-3.4.1.min.js"></script>
+          <script src="js/bootstrap.bundle.min.js"></script>
+          <script src="js/dropzone.js"></script>
+          <script src="js/init.js"></script>
+          <script src="js/login.js"></script>
+          <script src="js/cart.js"></script>
 </body>
 
 </html>

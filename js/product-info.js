@@ -39,7 +39,7 @@ function showImagesGallery(array){
           </a>
           </div>
         `
-    console.log(htmlContentToAppend);
+    
      document.getElementById("productImagesGallery").innerHTML = htmlContentToAppend;
 }
 
@@ -52,7 +52,7 @@ function showRelatedProducts(array){
 
         if(i==1 || i==3){
             htmlContentToAppend +=`
-        <div class="card-group col-6" >
+        <div class="card-group col-6 " >
            <div class="card bg-light" >
             <img class="card-img-top" style="height: 15rem;"src="` + prodRelated.imgSrc + `"  alt="Card image">
               <div class="card-body">
@@ -101,18 +101,12 @@ function showCommentary(array){
     }
 }
 
-  
-  // Borrar comentario
-  function clearComment(){
-    $('#txt1').val('');
-    $('#scorebox').val('');
-    clearStorage();
-    alert("Comentario enviado!")
-  }
 
 /*Función que se ejecuta una vez que se haya lanzado el evento de
 que el documento se encuentra cargado*/
 document.addEventListener("DOMContentLoaded", function(e){
+  
+ 
     getJSONData(PRODUCT_INFO_URL).then(function(resultObj){
         if (resultObj.status === "ok")
         {
@@ -152,6 +146,6 @@ document.addEventListener("DOMContentLoaded", function(e){
         //Muestro los productos relacionados
         showRelatedProducts(productRelatedArray);
     });
-    
+  
 });
     

@@ -61,15 +61,15 @@
    <!--Muestro info de producto-->
    <h3 class="text-center MT-4" id="productName"></h3>
    <hr>
-      <div class="row col-12">
+      <div class="row col-md-12 col-sm-12">
       
-          <div class="col-4 mt-4">
+          <div class="col-md-4 col-sm-12 mt-4">
               <dl>
               <dt class="mb-4">Descripción</dt>
               <dd>
                 <p align="left" id="productDescription"></p>
               </dd>
-              <div class="col-2">
+              <div class="col-md-2">
                 <dt>Precio</dt>
                 <dd>
                   <p id="productCost"></p>
@@ -81,7 +81,7 @@
                 </dd>
               </div>
           </div>
-            <div class="col-8 mt-4 ">
+            <div class="col-md-8 col-sm-12 mt-4 ">
                 <dt class="text-center text-right mb-4">Imágenes ilustrativas</dt>
                 <div id="productImagesGallery"class="carousel slide" data-ride="carousel">
                 </div>
@@ -91,7 +91,7 @@
    </div>
    
    
-      <h2 class="text-center mb-3 mt-4">Comentarios</h2>
+   <h2 class="text-center mb-3 mt-4">Comentarios</h2>
       <!--Comentarios-->
       <div id="comentarios"></div>
       <div id="nuevosComentarios"></div>
@@ -118,7 +118,7 @@
              
            </div>
            
-   
+          <!--Nuevo comentario-->
            <div class="form-group row justify-content-center">
             <label for="exampleFormControlTextarea1" class="mr-5 " >Comentario</label>
             <textarea class="form-control col-10 form-group" id="txt1" rows="4" cols="4"></textarea>
@@ -127,7 +127,7 @@
            <div class="form-group row justify-content-center">
              <div>
                
-              <button class="btn" style="background-color:rgb(212, 19, 154); color: white;" onClick="clearComment()">Enviar </button>
+              <button class="btn" type="submit" id="Comentar" style="background-color:rgb(212, 19, 154); color: white;" >Enviar </button>
              </div>
            </div>
          </form>
@@ -139,10 +139,9 @@
          
      <div class="row co-12" style="width: 800px; height: 400px;" id="ProductsRelated"></div>
    
-    
   </div>
-
 </main>
+
   <footer class="text-muted mt-8">
     <div class="container">
       <p class="float-right">
@@ -163,6 +162,7 @@
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
+  <script src="js/login.js"></script>
   <script src="js/product-info.js"></script>
 </body>
 

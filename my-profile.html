@@ -70,46 +70,46 @@
   </nav>
   <div class="container p-5">
    
-  <div class="row p-5 mt-4">
+  <div class="row  mt-4">
     <!--Modal para Seleccionar-->
   <div id="modalCambiarDatos" class="modal fade" role="dialog">
     <div class="modal-dialog modal-lg" role="content" >
         <!-- Modal content-->
-        <div class="modal-content col-8" >
+        <div class="modal-content col-md-8 col-sm-12" >
             
             <div class="modal-body">
                 
               <div class="">
                 <form action="" class="" id="infoPerfil">
                   <div class="mt-4 ">
-                    <label class="col-12" >Primer nombre:  *</label>
+                    <label class="col-md-12 col-sm-12" >Primer nombre:  *</label>
                    
-                    <input class="col-12" type="text" id="Nombre1" required> 
+                    <input class="col-md-12 col-sm-12" type="text" id="Nombre1" > 
                   </div>
                  <div class="mt-4">
-                    <label class="col-12"> Segundo nombre:</label>
+                    <label class="col-md-12 col-sm-12"> Segundo nombre:</label>
                     
-                   <input class="col-12" type="text" id="Nombre2">
+                   <input class="col-md-12 col-sm-12" type="text" id="Nombre2">
                  </div>
                  <div class="mt-4">
-                   <label class="col-12"> Primer apellido:  *</label>
+                   <label class="col-md-12 col-sm-12"> Primer apellido:  *</label>
                    
-                   <input class="col-12" type="text" id="Apellido1" required>
+                   <input class="col-md-12 col-sm-12" type="text" id="Apellido1" >
                  </div>
                  <div class="mt-4">
-                   <label class="col-12"> Segundo apellido:</label>
+                   <label class="col-md-12 col-sm-12"> Segundo apellido:</label>
                    
-                   <input class="col-12" type="text" id="Apellido2">
+                   <input class="col-md-12 col-sm-12" type="text" id="Apellido2">
                  </div>
                  <div class="mt-4 ">
-                   <label class="col-12"> Email:  *</label>
+                   <label class="col-md-12 col-sm-12"> Email:  *</label>
                    
-                   <input class="col-12" type="text" id="Email" required>
+                   <input class="col-md-12 col-sm-12" type="text" id="Email" >
                  </div>
                  <div class="mt-4">
-                   <label class="col-12"> Teléfono de contacto: *</label>
+                   <label class="col-md-12 col-sm-12"> Teléfono de contacto: *</label>
                    
-                   <input class="col-12" type="text" id="InfoTel" placeholder="" required>
+                   <input class="col-md-12 col-sm-12" type="text" id="InfoTel" placeholder="" >
                  </div>
                  <hr>
                  <button type="submit" class="btn btn-primary" id="GuardarCambios" data-dismiss = "modal">Guardar cambios</button>
@@ -120,23 +120,48 @@
          </div>
     </div>
   </div>
-    <h2 class="col-12">Mi perfil:</h2>
-     <hr>
-   <div><img src="" alt=""></div>
-   <div class="row col-12 text-center ">
+  <div class="card col-12">
+    <img src="img/icon2.png" class="card-img-top justify-content-center" style="width: 200px; align-self: center;" alt="...">
+    <h2 class="card-header  text-center">Mi perfil:</h2>
      
-     <p class="p-4 col-6">Nombre:</p><p id="pNombre1" class="p-4 col"></p>
-     <p class="p-4 col-6">Segundo nombre:</p><p id="pNombre2" class="p-4 col-6"></p>
-     <p class="p-4 col-6">Apellido:</p><p id="pApellido" class="p-4 col-6"></p>
-     <p class="p-4 col-6">Segundo Apellido:</p><p id="pApellido2" class="p-4 col-6"></p>
-     <p class="p-4 col-6">Email:</p><p id="pEmail" class="p-4 col-6"></p>
-     <p class="p-4 col-6">Teléfono:</p><p id="pTel" class="p-4 col-6"></p>
+   
+   <div class="card-body row col-mb-12 col-sm-12">
     
+     <table class="table table-bordered">
+      <thead>
+          
+      </thead>
+      <tr>
+        <th class="p-4 col-mb-6 col-sm-6">Nombre:</th>
+        <td id="pNombre1" class="p-4 col-mb-6 col-sm-6"></td>
+        
+      </tr>
+      <tr>
+        <th class="p-4 col-mb-6 col-sm-6">Segundo nombre:</th>
+        <td id="pNombre2" class="p-4 col-mb-6 col-sm-6"></td>
+      </tr>
+      <tr>
+        <th class="p-4 col-mb-6 col-sm-6">Apellido:</th>
+        <td id="pApellido" class="p-4 col-mb-6 col-sm-6"></td>
+      </tr>
+      <tr>
+        <th class="p-4 col-mb-6 col-sm-6">Segundo Apellido:</th>
+        <td id="pApellido2" class="p-4 col-mb-6 col-sm-6"></td>
+      </tr>
+      <tr>
+        <th class="p-4 col-mb-6 col-sm-6">Email:</th>
+        <td id="pEmail" class="p-4 col-mb-6 col-sm-6"></td>
+      </tr>
+      <tr>
+        <th class="p-4 col-mb-6 col-sm-6">Teléfono:</th>
+        <td  id="pTel" class="p-4 col-mb-6 col-sm-6"></td>
+      </tr>
+  </table>
      <div class="d-flex justify-content-center col-7 mt-4">
       <hr>
       <button type="submit" class="btn btn-primary " id="CambiarDatos" data-toggle="modal" >Agregar Datos</button>
     </div>
-    
+  </div>
    </div>
   </div>
 </div>
@@ -152,6 +177,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/dropzone.js"></script>
   <script src="js/init.js"></script>
+  <script src="js/login.js"></script>
   <script src="js/my-profile.js"></script>
 </body>
 

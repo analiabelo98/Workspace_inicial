@@ -40,16 +40,12 @@ var getJSONData = function(url){
         return result;
     });
 }
-if (
-  !window.location.href.endsWith('index.html') &&
-  !(sessionStorage.getItem('logged'))) {
-   localStorage.setItem("usuario", username.value);
-  
-}
 
-//Guarda usuario en HTML
-var userGuardado = localStorage.getItem("user")
-document.getElementById("usuario").innerHTML = userGuardado;
+ //Guarda usuario en HTML
+            
+ document.getElementById("usuario").innerHTML = sessionStorage.getItem("user");
+
+
    
 
 //Función que se ejecuta una vez que haya lanzado el evento de

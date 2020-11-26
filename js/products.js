@@ -6,6 +6,7 @@ var currentSortProducts = undefined;
 var minCount = undefined;
 var maxCount = undefined;
 
+//Ordena los productos
 function sortProducts(criteria, array){
     let result = [];
     if (criteria === ORDER_ASC_BY_PRICE)
@@ -31,6 +32,7 @@ function sortProducts(criteria, array){
     return result;
 }
 
+//Muestro los productos
 function showProductsList(){
 
     let htmlContentToAppend = "";
